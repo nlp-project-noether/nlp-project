@@ -1,0 +1,10 @@
+*.csv
+env.py
+.DS_Store
+.ipynb_checkpoints/
+<<<<<<< HEAD
+__pycache__/
+=======
+__pycache__
+.vscode/
+>>>>>>> 513f011a9ab3f2a76025481c496f70460ea7547c
