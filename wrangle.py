@@ -156,3 +156,15 @@ def jupy_replace(df):
     for x in repo_mod.index:
         df.loc[x, 'language'] = repo_mod.loc[x, 'new_lang']
     return df
+
+
+def clean_lang(df):
+    '''
+    This function gets the top three languages used. If the language is not in the top three,
+    it will replace the language with `other`.
+    '''
+    df.language = df.language.str.lower()
+    invalid = list(set(list(df.language.value_counts().index))-set(['c++', 'python', 'html']))
+    invalid_index = df[df.language.isin(invalid)]['language'].index
+    df.loc[invalid_index,'language']='other'
+    return df
