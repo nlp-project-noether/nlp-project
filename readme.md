@@ -16,10 +16,10 @@ This project aims to predict the programming language that a Github repository w
 
 | Feature | Definition | Data Type |
 | ----- | ----- | ----- |
-| repo | Year the house was built| `int` |
-| language| Value of the property | `object` |
-| readme_content | Tax amount paid throughout the year| `object` |
-| lem | Readme contents that have been lemmatized |
+| repo | The repository obtained from Github| `object` |
+| language| The main programming language used | `object` |
+| readme_content | The contents included in the ReadMe file | `object` |
+| lem | Readme contents that have been lemmatized | `object` |
 
 
 
