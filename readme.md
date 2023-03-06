@@ -49,8 +49,12 @@ TBD
 Exploration
   
  
-Modeling
-
+Modeling - Explore data in search of most frequent words used in readmes by programming languages
+- Answer the following initial questions:
+    - Are there any words that uniquely identify a programming language? 
+    - What are the most common words in READMEs?
+    - Does the length of the README vary by programming language?
+    - Is there a numerical difference in bigrams by language?
 - Use or make functions to help build our models 
 
 - Build models 
