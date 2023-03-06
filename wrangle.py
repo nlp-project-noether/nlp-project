@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 from typing import Dict, List, Optional, Union, cast
 from bs4 import BeautifulSoup
+import os
+from sklearn.model_selection import train_test_split
+from env import github_token, github_username
 import requests
 import nltk
 import unicodedata
@@ -34,9 +37,10 @@ def get_readme():
         return flat_list
 
 
-REPOS: flat_list
 
-headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
+REPOS= flat_list= get_readme()
+
+headers= {"Authorization": f"token {github_token}", "User-Agent": github_username}
 
 if headers["Authorization"] == "token " or headers["User-Agent"] == "":
     raise Exception(
@@ -168,3 +172,25 @@ def clean_lang(df):
     invalid_index = df[df.language.isin(invalid)]['language'].index
     df.loc[invalid_index,'language']='other'
     return df
+
+def join(col):
+    return ' '.join(col)
+
+def split_data(df, target):
+    
+    '''
+    Splits a df into a train, validate, and test set. 
+    target is the feature you will predict
+    '''
+    full = df
+    train_validate, test = train_test_split(df, train_size =.8, random_state = 21)
+    train, validate = train_test_split(train_validate, train_size = .7, random_state = 21)
+    X_train = train.drop(columns=target)
+    y_train = train[target]
+    X_val = validate.drop(columns=target)
+    y_val = validate[target]
+    X_test = test.drop(columns=target)
+    y_test = test[target]
+    
+    
+    return train, X_train, y_train, X_val, y_val, X_test, y_test
