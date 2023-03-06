@@ -75,3 +75,19 @@ Delivery
   - Clone this repo
   - Put data in the same file as the repo
   - Run the notebook
+ 
+ # Takeaways and Conclusion
+ 
+ - Two of the top three words in python (pr and create) do not appear as top words in any of the other programming languages, along with software. 
+ - None of the top words in C++ appeared as top words in any of the other programming languages and had the highest difference between these top words versus the three other programming languages. 
+ - Only one of the top words words in HTML (branch) did not appear in the other progamming language. 
+ - None of the top three programming languages appeared in the top ten of eachother. 
+ - Only other had the same top words (source, file, and change) with python and mainly HTML. 
+ - The top three words overall in READMEs were source, code, and td. Code did not appear in any of the top three, but source and td appeared in python, C++, and other, the top three coding languages.
+
+# Recommendations
+
+- Based on these takeaways it appears that the words below are most related to the respective programming language:
+    - Python = pr, create, and software
+    - C++ = td, im, hobby, and titlecode
+    - HTML = branch
