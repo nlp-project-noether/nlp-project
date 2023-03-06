@@ -171,6 +171,7 @@ def clean_lang(df):
     invalid = list(set(list(df.language.value_counts().index))-set(['c++', 'python', 'html']))
     invalid_index = df[df.language.isin(invalid)]['language'].index
     df.loc[invalid_index,'language']='other'
+    df.loc[df[df.language.isna()].index,'language']= 'other'
     return df
 
 def join(col):

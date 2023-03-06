@@ -102,7 +102,7 @@ def length_viz(df):
         lengths.append(temp)
     df['lengths'] = lengths
     viz001 = df[df['lengths'] < 8000]
-    sns.barplot(data = viz001, x = 'Language', y = 'Lengths')
+    sns.barplot(data = viz001, x = 'language', y = 'lengths')
     plt.title('ReadMe Overal Length by Language')
     plt.ylabel('Overal Length')
     plt.xlabel('Language Used')
