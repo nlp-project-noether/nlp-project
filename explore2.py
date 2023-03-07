@@ -91,19 +91,6 @@ def other_vis(word_freq):
     plt.xticks(rotation=45)
     return plt.show() 
 
-def readme_vis(word_freq):
-    '''
-    This function creates a bar plot of the most common words
-    appearing in other programming languages.
-    '''
-    #Plot the most frequent readme words and color by label
-    word_freq.sort_values('readme', ascending=False).head(10).plot.bar(figsize=(16, 9))
-    plt.title('Most Common Words in READMEs')
-    plt.ylabel('Count')
-    plt.xlabel('Most common words')
-    plt.xticks(rotation=45)
-    return plt.show()
-
 def length_viz(df):
     '''
     This function generates a visualization for lengths
