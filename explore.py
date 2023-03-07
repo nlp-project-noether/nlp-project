@@ -103,7 +103,22 @@ def length_viz(df):
     df['lengths'] = lengths
     viz001 = df[df['lengths'] < 8000]
     sns.barplot(data = viz001, x = 'language', y = 'lengths')
-    plt.title('ReadMe Overal Length by Language')
+    plt.title('ReadMe Overall Length by Language')
     plt.ylabel('Overal Length')
     plt.xlabel('Language Used')
     return plt.show()
+
+def viz_models_accuracy(df):
+    '''takes in a dataframe and plot a graph to show comparisons models accuracy score on train and valiadate data'''
+    df = df.copy()
+    df.train = df.train *100
+    df.validate = df.validate *100
+    ax = df.plot.bar(rot=75)
+    ax.spines[['right', 'top']].set_visible(False)
+    plt.title('Comparisons of Accuracy')
+    plt.axhline(y= 33, linestyle= 'dashed', color= 'y', )
+    plt.xticks(ticks=[0, 1, 2, 3],labels=['Linear Regression', 'Random Forest', 'KNN', 'Decision Tree'])
+    plt.ylabel('Accuracy score')
+    plt.bar_label(ax.containers[0],fmt='%.0f%%')
+    plt.bar_label(ax.containers[1],fmt='%.0f%%')
+    plt.show()
